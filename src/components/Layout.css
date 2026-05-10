@@ -1,0 +1,25 @@
+.sidebar {
+    display: none;
+}
+
+.bottomNav {
+    display: flex;
+}
+
+.mainContent {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: flex !important;
+    }
+
+    .bottomNav {
+        display: none !important;
+    }
+
+    .mainContent {
+        margin-left: 240px;
+    }
+}

@@ -1,13 +1,88 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #06060f;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input, textarea, select, button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(232, 16, 42, 0.3);
+  color: white;
+}
+@media (max-width: 767px) {
+    /* stack two column grids on mobile */
+    .two-col {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* coach layout on mobile */
+    .coach-layout {
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+    }
+
+    /* profile layout on mobile */
+    .profile-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* goals grid on mobile */
+    .goals-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+@media (min-width: 768px) {
+    .mobileTheme {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .two-col {
+        grid-template-columns: 1fr !important;
+    }
+    .coach-layout {
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+    }
+    .profile-layout {
+        grid-template-columns: 1fr !important;
+    }
+    .goals-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
