@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { getMe } from '../services/api';
 
 const AuthContext = createContext();
@@ -8,11 +8,11 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(true);
 
-    const fetchUser = () => {
+    const fetchUser = useCallback(() => {
         return getMe()
             .then(res => setUser(res.data))
             .catch(() => logout());
-    };
+    }, []);
 
     useEffect(() => {
         if (token) {
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         } else {
             setLoading(false);
         }
-    }, [token]);
+    }, [token, fetchUser]);
 
     const login = (token, userData) => {
         localStorage.setItem('token', token);
